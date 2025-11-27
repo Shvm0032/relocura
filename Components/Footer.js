@@ -48,57 +48,69 @@ export default function Footer() {
       {/* MAIN FOOTER */}
       <footer
         id="main-footer"
-        className="bg-blue-900 text-white  pt-14 pb-10 px-16"
+        className="bg-blue-900 text-white pt-14 pb-10 px-6 md:px-16"
       >
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10">
-          
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* About */}
-          <div className="pr-10">
+          <div>
             <Link href="/" className="inline-block mb-4">
               <img src="/logo.png" alt="Company Logo" className="h-15 w-40" />
             </Link>
 
-            <p className="text-gray-200 text-justify text-sm leading-6">
+            <p className="text-gray-200 text-sm leading-6 text-left">
               We provide legal relocation support to Portugal including
               documents, training, travel, and integration assistance.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div className="pl-10">
-            <h3 className="text-lg font-semibold  mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-gray-300 text-sm">
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-left">
+              Quick Links
+            </h3>
+
+            <ul className="space-y-2 text-gray-300 text-sm text-left">
               <li>
-                <a href="#who" className="hover:underline">Who We Are</a>
+                <a href="#who" className="hover:underline">
+                  Who We Are
+                </a>
               </li>
               <li>
-                <a href="#process" className="hover:underline">Our Process</a>
+                <a href="#process" className="hover:underline">
+                  Our Process
+                </a>
               </li>
               <li>
-                <a href="#what" className="hover:underline">What You Get</a>
+                <a href="#what" className="hover:underline">
+                  What You Get
+                </a>
               </li>
               <li>
-                <a href="#faq" className="hover:underline">FAQ</a>
+                <a href="#faq" className="hover:underline">
+                  FAQ
+                </a>
               </li>
               <li>
-                <a href="#contact" className="hover:underline">Contact</a>
+                <a href="#contact" className="hover:underline">
+                  Contact
+                </a>
               </li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-lg font-semibold mb-4 text-left">Contact Us</h3>
 
-            <p className="flex items-center gap-3 text-gray-200 text-sm mb-2">
+            <p className="flex items-center gap-3 text-gray-200 text-sm mb-2 text-left">
               <Phone size={18} /> +91 98765 43210
             </p>
 
-            <p className="flex items-center gap-3 text-gray-200 text-sm mb-2">
+            <p className="flex items-center gap-3 text-gray-200 text-sm mb-2 text-left">
               <Mail size={18} /> info@company.com
             </p>
 
-            <p className="flex items-center gap-3 text-gray-200 text-sm mb-5">
+            <p className="flex items-center gap-3 text-gray-200 text-sm mb-5 text-left">
               <MapPin size={18} /> Lisbon, Portugal
             </p>
 
@@ -127,7 +139,11 @@ export default function Footer() {
         <button
           onClick={scrollToTop}
           className={`fixed bottom-6 right-6 p-3 hover:cursor-pointer rounded-full shadow-lg transition-all duration-300 z-50
-            ${isNearFooter ? "bg-white text-[#1C398E]" : "bg-[#1C398E] text-white"}
+            ${
+              isNearFooter
+                ? "bg-white text-[#1C398E]"
+                : "bg-[#1C398E] text-white"
+            }
           `}
         >
           <ArrowUp size={22} />
