@@ -1,15 +1,23 @@
 import "../app/globals.css";
 import Header from "@/Components/Header";
 import Footer from "@/Components/Footer";
-import { Inter } from "next/font/google";
+import { Playfair_Display, Poppins } from "next/font/google";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
 
-
-const inter = Inter({
+// Heading Font
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-playfair",
+});
+
+// Body Text Font
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
 });
 
 export const metadata = {
@@ -20,7 +28,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${playfair.variable} ${poppins.variable}`}>
         <Header />
         {children}
         <Footer />

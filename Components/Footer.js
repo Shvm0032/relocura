@@ -126,7 +126,7 @@ export default function Footer() {
       {showButton && (
         <button
           onClick={scrollToTop}
-          className={`fixed bottom-6 right-6 p-3 hover:cursor-pointer rounded-full shadow-lg transition-all duration-300 
+          className={`fixed bottom-6 right-6 p-3 hover:cursor-pointer rounded-full shadow-lg transition-all duration-300 z-50
             ${isNearFooter ? "bg-white text-[#1C398E]" : "bg-[#1C398E] text-white"}
           `}
         >

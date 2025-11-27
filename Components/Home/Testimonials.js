@@ -1,97 +1,180 @@
 "use client";
 
-import Slider from "react-slick";
-import { Star } from "lucide-react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function Testimonials() {
+import "swiper/css";
+import "swiper/css/navigation";
+
+export default function TestimonialSlider() {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
   const testimonials = [
-    {
-      text: "Amazing support, very professional.",
-      name: "John Doe",
-      rating: 5,
+    { 
+      text: "The support I received was exceptional. They made my relocation process smooth and hassle-free.", 
+      name: "John Doe", 
+      rating: 5 
     },
-    {
-      text: "They helped me relocate legally and safely.",
-      name: "Jane Smith",
-      rating: 5,
+    { 
+      text: "Professional team with excellent guidance throughout the entire process. Highly recommended!", 
+      name: "Jane Smith", 
+      rating: 5 
     },
-    {
-      text: "Training and guidance was excellent.",
-      name: "Ahmed Khan",
-      rating: 4,
+    { 
+      text: "Training and documentation support was outstanding. They really care about their clients.", 
+      name: "Ahmed Khan", 
+      rating: 4 
     },
-    {
-      text: "Highly recommended, smooth process.",
-      name: "Maria Lopez",
-      rating: 5,
+    { 
+      text: "Smooth process from start to finish. The team was always available to answer my questions.", 
+      name: "Maria Lopez", 
+      rating: 5 
     },
-    {
-      text: "Friendly staff and great guidance.",
-      name: "Lucas Brown",
-      rating: 4,
+    { 
+      text: "Great experience with friendly staff. They made me feel comfortable throughout the journey.", 
+      name: "Lucas Brown", 
+      rating: 4 
+    },
+    { 
+      text: "Outstanding service! They exceeded my expectations in every aspect of the relocation.", 
+      name: "Sarah Chen", 
+      rating: 5 
     },
   ];
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 600,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: true,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
-
   return (
-    <section className="relative py-20">
-      {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/home/bg-3.jpg')" }}
-      ></div>
+    <section className="py-16 bg-gray-200">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            What Our Clients Say
+          </h2>
+          <div className="w-40 h-1 bg-[#1C398E] mb-10 rounded mx-auto "></div>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Don't just take our word for it. Here's what people have to say about their experience with us.
+          </p>
+        </div>
 
-      {/* White overlay */}
-      <div className="absolute inset-0 bg-black/10"></div>
+        {/* Slider Container */}
+        <div className="relative">
+          
+          {/* Navigation Arrows */}
+          <button
+            ref={prevRef}
+            className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 bg-white w-12 h-12 rounded-full 
+            shadow-lg  items-center justify-center hover:bg-gray-50 transition-all duration-200 
+            border border-gray-200 hover:shadow-xl hover:cursor-pointer active:scale-95 hidden md:flex"
+          >
+            <ChevronLeft className="text-gray-700 w-6 h-6" />
+          </button>
 
-      <div className="relative max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold mb-12 text-center text-gray-800">Testimonials</h2>
+          <button
+            ref={nextRef}
+            className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 hover:cursor-pointer bg-white w-12 h-12 rounded-full 
+            shadow-lg  items-center justify-center hover:bg-gray-50 transition-all duration-200 
+            border border-gray-200 hover:shadow-xl active:scale-95 hidden md:flex"
+          >
+            <ChevronRight className="text-gray-700 w-6 h-6" />
+          </button>
 
-        <Slider {...settings}>
-          {testimonials.map((item, index) => (
-            <div key={index} className="p-4">
-              <div className="bg-[#1C398E] rounded-2xl shadow-lg p-6 min-h-[200px] flex flex-col justify-start text-white">
-                {/* Comment */}
-                <p className="text-left text-lg mb-4">“{item.text}”</p>
+          {/* Swiper Slider */}
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={1}
+            loop={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            speed={800}
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 25,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+            }}
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+            onInit={(swiper) => {
+              // Attach navigation after initialization
+              if (swiper.params.navigation) {
+                swiper.params.navigation.prevEl = prevRef.current;
+                swiper.params.navigation.nextEl = nextRef.current;
+                swiper.navigation.init();
+                swiper.navigation.update();
+              }
+            }}
+            className="pb-2"
+          >
+            {testimonials.map((testimonial, index) => (
+              <SwiperSlide key={index}>
+                <div className="bg-[#1C398E] rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-6 h-full border border-gray-100">
+                  
+                  {/* Comment/Text - Top */}
+                  <div className="mb-6">
+                    <p className="text-gray-100 text-lg leading-relaxed ">
+                      "{testimonial.text}"
+                    </p>
+                  </div>
 
-                {/* Name */}
-                <p className="font-semibold text-sm text-left mb-2">{item.name}</p>
+                  {/* Name - Middle */}
+                  <div className="mb-4">
+                    <p className="text-gray-100 font-semibold text-base">
+                      {testimonial.name}
+                    </p>
+                  </div>
 
-                {/* Rating */}
-                <div className="flex items-center">
-                  {Array.from({ length: 5 }, (_, i) => (
-                    <Star
-                      key={i}
-                      className={`w-5 h-5 mr-1 ${
-                        i < item.rating ? "text-yellow-400" : "text-gray-400"
-                      }`}
-                    />
-                  ))}
+                  {/* Rating - Bottom */}
+                  <div className="flex items-center">
+                    {Array.from({ length: 5 }).map((_, starIndex) => (
+                      <Star
+                        key={starIndex}
+                        fill={starIndex < testimonial.rating ? "currentColor" : "none"}
+                        className={`w-5 h-5 ${
+                          starIndex < testimonial.rating 
+                            ? "text-yellow-400" 
+                            : "text-gray-100"
+                        }`}
+                      />
+                    ))}
+                    <span className="ml-2 text-sm text-gray-100">
+                      ({testimonial.rating}.0)
+                    </span>
+                  </div>
+
                 </div>
-              </div>
-            </div>
-          ))}
-        </Slider>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          {/* Mobile Navigation Dots */}
+          <div className="flex justify-center mt-8 space-x-2 md:hidden">
+            {testimonials.slice(0, 3).map((_, index) => (
+              <button
+                key={index}
+                className="w-2 h-2 rounded-full bg-gray-300 transition-all duration-200"
+              />
+            ))}
+          </div>
+
+        </div>
       </div>
     </section>
   );

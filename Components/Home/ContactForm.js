@@ -6,15 +6,16 @@ export default function ContactForm() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
         style={{
-          backgroundImage: "url('/home/bg-6.jpg')",
+          backgroundImage: "url('/home/bg-7.png')",
         }}
       ></div>
 
 
       <div className="relative max-w-3xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+        <h2 className="text-4xl font-bold text-center mb-4 text-gray-800">
           Contact Us
         </h2>
+        <div className="w-40 h-1 bg-[#1C398E] mb-10 rounded mx-auto "></div>
 
         <div className="bg-white rounded-3xl shadow-xl p-10 border border-gray-200">
           <form className="grid gap-6">

@@ -1,94 +1,132 @@
 "use client";
+
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { Menu, X, Phone, Mail, Facebook, Instagram, Linkedin } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Menu,
+  X,
+} from "lucide-react";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const [showTopBar, setShowTopBar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [hideTopBar, setHideTopBar] = useState(false);
 
-  // top bar height (for smooth animation)
-  const TOP_BAR_HEIGHT = 40; // px, adjust as needed
-
+  // Hide Topbar on scroll
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setShowTopBar(false); // scrolling down
+      if (window.scrollY > lastScrollY) {
+        setHideTopBar(true); // Scroll down → hide
       } else {
-        setShowTopBar(true); // scrolling up
+        setHideTopBar(false); // Scroll up → show
       }
-
-      setLastScrollY(currentScrollY);
+      lastScrollY = window.scrollY;
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   return (
-    <div className="bg-white">
-      {/* ---------- TOP BAR ---------- */}
+    <header className="w-full fixed top-0 z-50">
+      {/* ---------- TOP BAR (Hidden on mobile) ---------- */}
       <div
-        className={`hidden md:flex fixed w-full bg-[#1C398E] text-white text-sm py-2 px-6 justify-between z-50 transition-transform duration-300`}
-        style={{ transform: `translateY(${showTopBar ? 0 : -TOP_BAR_HEIGHT}px)` }}
+        className={`hidden md:flex justify-between items-center px-6 py-2 bg-[#1C398E] text-white transition-all duration-300 ${
+          hideTopBar ? "-translate-y-full" : "translate-y-0"
+        }`}
       >
-        <div className="flex items-center gap-6">
-          <div className="flex items-center gap-2">
+        {/* LEFT */}
+        <div className="flex items-center gap-6 text-sm">
+          <span className="flex items-center gap-1">
             <Phone size={16} /> +91 9876543210
-          </div>
-          <div className="flex items-center gap-2">
-            <Mail size={16} /> info@company.com
-          </div>
+          </span>
+          <span className="flex items-center gap-1">
+            <Mail size={16} /> info@example.com
+          </span>
         </div>
+
+        {/* RIGHT */}
         <div className="flex items-center gap-4">
-          <Link href="#"><Facebook size={18} /></Link>
-          <Link href="#"><Instagram size={18} /></Link>
-          <Link href="#"><Linkedin size={18} /></Link>
+          <Facebook className="cursor-pointer" size={18} />
+          <Instagram className="cursor-pointer" size={18} />
+          <Linkedin className="cursor-pointer" size={18} />
         </div>
       </div>
 
-      {/* ---------- MAIN NAVBAR ---------- */}
+      {/* ---------- MAIN HEADER (LOGO + MENU) ---------- */}
       <div
-        className={`fixed w-full bg-white py-3 px-6 flex items-center justify-between shadow-md z-50 transition-transform duration-300`}
-        style={{
-          transform: `translateY(${showTopBar ? TOP_BAR_HEIGHT : 0}px)`
-        }}
+        className={`w-full md:bg-white bg-blue-600 shadow-sm transition-all duration-300 ${
+          hideTopBar ? "top-0" : "md:top-8"
+        } fixed`}
       >
-        {/* Logo */}
-        <Link href="/" className="flex items-center">
-          <img src="/logo.png" alt="Logo" className="h-15 w-40" />
-        </Link>
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center py-4">
+          {/* LOGO */}
+          <Link href="/" className="flex items-center gap-2">
+            <Image
+              src="/logo.png" 
+              alt="Logo"
+              width={40} 
+              height={40} 
+              className="md:h-16 md:w-28 h-14 w-20"
+            />
+          
+          </Link>
 
-        {/* Desktop Menu */}
-        <nav className="hidden md:flex gap-6 font-medium text-gray-700">
-          <Link href="/who-we-are" className="hover:text-[#1C398E] transition-colors">Who We Are</Link>
-          <Link href="/process" className="hover:text-[#1C398E] transition-colors">Process</Link>
-          <Link href="/what-you-get" className="hover:text-[#1C398E] transition-colors">What You Get</Link>
-          <Link href="/faq" className="hover:text-[#1C398E] transition-colors">FAQ</Link>
-          <Link href="/contact" className="hover:text-[#1C398E] transition-colors">Contact</Link>
-        </nav>
-
-        {/* Mobile Hamburger */}
-        <button className="md:hidden" onClick={() => setOpen(!open)}>
-          {open ? <X size={26} /> : <Menu size={26} />}
-        </button>
-      </div>
-
-      {/* ---------- MOBILE MENU ---------- */}
-      {open && (
-        <div className="md:hidden bg-white border-t shadow-sm" style={{ marginTop: TOP_BAR_HEIGHT + 48 }}>
-          <nav className="flex flex-col p-4 space-y-4 text-gray-700 font-medium">
-            <Link href="/who-we-are" onClick={() => setOpen(false)} className="hover:text-[#1C398E] transition-colors">Who We Are</Link>
-            <Link href="/process" onClick={() => setOpen(false)} className="hover:text-[#1C398E] transition-colors">Process</Link>
-            <Link href="/what-you-get" onClick={() => setOpen(false)} className="hover:text-[#1C398E] transition-colors">What You Get</Link>
-            <Link href="/faq" onClick={() => setOpen(false)} className="hover:text-[#1C398E] transition-colors">FAQ</Link>
-            <Link href="/contact" onClick={() => setOpen(false)} className="hover:text-[#1C398E] transition-colors">Contact</Link>
+          {/* DESKTOP MENU */}
+          <nav className="hidden md:flex items-center gap-8 text-gray-700">
+            <Link href="/">Home</Link>
+            <Link href="/about">About</Link>
+            <Link href="/services">Services</Link>
+            <Link href="/services">Process</Link>
+            <Link href="/services">Testimonial</Link>
+            <Link href="/contact-us">Contact</Link>
           </nav>
+
+          {/* MOBILE MENU BUTTON */}
+          <button
+            className="md:hidden text-gray-100"
+            onClick={() => setOpen(!open)}
+          >
+            {open ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
-      )}
-    </div>
+
+        {/* MOBILE MENU DROPDOWN */}
+        {open && (
+          <div className="md:hidden bg-white text-gray-700 shadow-lg px-6 py-4 flex flex-col gap-4">
+            <Link href="/" onClick={() => setOpen(false)}>
+              Home
+            </Link>
+            <Link href="/" onClick={() => setOpen(false)}>
+              About
+            </Link>
+            <Link href="/" onClick={() => setOpen(false)}>
+              Services
+            </Link>
+            <Link href="/" onClick={() => setOpen(false)}>
+              Process
+            </Link>
+            <Link href="/" onClick={() => setOpen(false)}>
+              Testimonial
+            </Link>
+            <Link href="/contact-us" onClick={() => setOpen(false)}>
+              Contact
+            </Link>
+            <div className="flex items-center gap-4">
+              <Facebook className="cursor-pointer" size={18} />
+              <Instagram className="cursor-pointer" size={18} />
+              <Linkedin className="cursor-pointer" size={18} />
+            </div>
+          </div>
+        )}
+      </div>
+    </header>
   );
 }

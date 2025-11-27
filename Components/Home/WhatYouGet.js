@@ -11,16 +11,18 @@ export default function WhatYouGet() {
   ];
 
   return (
-    <section className="bg-linear-to-r from-blue-100 to-white py-20 relative overflow-hidden">
+    <section className="bg-linear-to-r from-blue-900 to-gray-400 py-20 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
           What You Get
         </h2>
-        <p className="text-gray-600 text-lg md:text-xl mb-12">
-          With our program, you get a comprehensive package designed to make your move to Portugal smooth and professional:
+        <div className="w-40 h-1 bg-[#1C398E] mb-10 rounded mx-auto "></div>
+        <p className="text-gray-100 text-lg md:text-xl mb-12">
+          With our program, you get a comprehensive package designed to make
+          your move to Portugal smooth and professional:
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {benefits.map((item, index) => {
             const Icon = item.icon;
             return (
@@ -39,8 +41,10 @@ export default function WhatYouGet() {
           })}
         </div>
 
-        <p className="text-gray-600 text-lg md:text-xl max-w-5xl mx-auto">
-          After 5 years of legal residence, you can apply for permanent residence and citizenship, opening doors to a secure and prosperous future in Portugal.
+        <p className="text-white text-lg md:text-xl max-w-5xl mx-auto">
+          After 5 years of legal residence, you can apply for permanent
+          residence and citizenship, opening doors to a secure and prosperous
+          future in Portugal.
         </p>
       </div>
 

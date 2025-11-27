@@ -14,7 +14,7 @@ export default function WhoWeAre() {
   ];
 
   return (
-    <section className="relative w-full  bg-gray-200">
+    <section className="relative w-full pb-20  bg-white">
       <div className="max-w-7xl  mx-auto flex flex-col md:flex-row h-auto md:h-[600px]">
         {/* ---------- LEFT SIDE IMAGE ---------- */}
         <div className="relative md:w-1/2 h-64 md:h-auto">
@@ -29,11 +29,12 @@ export default function WhoWeAre() {
         </div>
 
         {/* ---------- RIGHT SIDE CONTENT ---------- */}
-        <div className="md:w-1/2 bg-white px-5 pt-12 relative z-10">
+        <div className="md:w-1/2 bg-white px-8 pt-3 relative z-10">
           <h2 className="text-4xl md:text-5xl text-gray-700 font-bold pb-5">
             Who We Are
           </h2>
-          <p className="text-gray-700 text-lg mb-6">
+          <div className="w-40 h-1 bg-[#1C398E] mb-5 rounded"></div>
+          <p className="text-gray-700 text-justify text-lg mb-6">
             We are a company that helps non-EU citizens embark on a legal,
             concrete, and recognized path to relocate to Portugal. Our role is
             to provide comprehensive support to make your relocation smooth,
@@ -52,7 +53,7 @@ export default function WhoWeAre() {
               </div>
             ))}
           </div>
-          <p className="text-gray-700 text-lg mt-6">
+          <p className="text-gray-700 text-justify text-lg mt-6">
             Our service does not provide employment and does not operate as a
             recruitment agency. We provide exclusively administrative,
             logistical, and training support.

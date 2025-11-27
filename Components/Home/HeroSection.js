@@ -33,7 +33,7 @@ export default function ImageSlider() {
   };
 
   return (
-    <section className="w-full mx-auto h-[60vh] sm:h-[70vh] md:h-[90vh] relative">
+    <section className="w-full mt-16 mx-auto h-[60vh] sm:h-[70vh] md:h-[90vh] relative">
       {/* Slider */}
       <Slider {...settings}>
         {images.map((src, index) => (
@@ -54,29 +54,14 @@ export default function ImageSlider() {
       </Slider>
 
       {/* Static Text Overlay */}
-      <div className="absolute inset-0 flex flex-col justify-center items-start px-6 md:px-20 text-white z-40">
+      <div className="absolute inset-0 flex flex-col justify-center items-start px-6 md:px-30 text-white z-30">
         <h2 className="text-3xl md:text-5xl font-bold mb-3">
-          Do you want a legal future in Europe? PRP is your opportunity.
+          Empowering Your Vision with Expert Solutions
         </h2>
         <p className="text-md md:text-lg mb-4">
-          We offer a comprehensive program for legal relocation to Portugal,
-          with full support for documents, travel, training, and integration.
+          We help you turn ideas into reality through strategic guidance, modern digital solutions, and a client-focused approach tailored to your goals.
         </p>
-        <ul className="grid sm:grid-cols-2 gap-2 text-sm md:text-base mb-6">
-          <li>✔ Documentation support</li>
-          <li>✔ Organized relocation</li>
-          <li>✔ Welcome with room and board</li>
-          <li>✔ Professional training</li>
-          <li>✔ Ongoing support</li>
-        </ul>
 
-        {/* Call to Action Button */}
-        <Link
-          href="#contact"
-          className="bg-[#1C398E] px-6 py-3 rounded-md text-white font-medium transition-transform duration-300 hover:scale-95 hover:bg-blue-800"
-        >
-          Request Information
-        </Link>
       </div>
     </section>
   );

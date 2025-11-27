@@ -38,20 +38,21 @@ export default function FAQ() {
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/home/bg-img.jpg')" }}
+        style={{ backgroundImage: "url('/home/bg-8.webp')" }}
       ></div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-white/50"></div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-white">
-        <h2 className="text-4xl font-bold mb-12 text-center">FAQ</h2>
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-gray-700">
+        <h2 className="text-4xl font-bold mb-3 text-center">FAQ</h2>
+        <div className="w-32 h-1 bg-[#254292] mb-10 rounded mx-auto "></div>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white/30 backdrop-blur-md rounded-xl shadow-lg overflow-hidden transition-all duration-300"
+              className="bg-[#254292] backdrop-blur-md rounded-xl shadow-lg overflow-hidden transition-all duration-300"
             >
               <button
                 onClick={() => toggle(index)}
@@ -65,7 +66,7 @@ export default function FAQ() {
                 />
               </button>
               <div
-                className={`px-6 pb-4 text-gray-200 transition-all duration-300 ${
+                className={`px-6 pb-4 text-gray-100 transition-all duration-300 ${
                   openIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                 } overflow-hidden`}
               >
