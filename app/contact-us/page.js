@@ -5,10 +5,10 @@ import ContactInfo from "@/Components/Contact/ContactInfo";
 
 export default function Contact() {
   return (
-    <>
+    <div className="bg-white text-gray-800 md:pt-16 ">
       <ContactHero />
       <ContactForm />
       <ContactInfo/>
-    </>
+    </div>
   );
 }

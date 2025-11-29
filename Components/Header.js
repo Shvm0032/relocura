@@ -84,8 +84,8 @@ export default function Header() {
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
             <Link href="/services">Services</Link>
-            <Link href="/services">Process</Link>
-            <Link href="/services">Testimonial</Link>
+            <Link href="/process">Process</Link>
+            <Link href="/testimonial">Testimonial</Link>
             <Link href="/contact-us">Contact</Link>
           </nav>
 
@@ -104,16 +104,16 @@ export default function Header() {
             <Link href="/" onClick={() => setOpen(false)}>
               Home
             </Link>
-            <Link href="/" onClick={() => setOpen(false)}>
+            <Link href="/about" onClick={() => setOpen(false)}>
               About
             </Link>
-            <Link href="/" onClick={() => setOpen(false)}>
+            <Link href="/services" onClick={() => setOpen(false)}>
               Services
             </Link>
-            <Link href="/" onClick={() => setOpen(false)}>
+            <Link href="/process" onClick={() => setOpen(false)}>
               Process
             </Link>
-            <Link href="/" onClick={() => setOpen(false)}>
+            <Link href="/testimonial" onClick={() => setOpen(false)}>
               Testimonial
             </Link>
             <Link href="/contact-us" onClick={() => setOpen(false)}>

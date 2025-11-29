@@ -7,13 +7,13 @@ import Testimonial from "@/Components/Home/Testimonials";
 
 export default function About() {
   return (
-    <>
+    <div className="bg-white text-gray-800 md:pt-16 ">
       <AboutHero />
       <AboutSection />
       <OurMission/>
       <WhyChooseUs/>
       <OurValues/>
       <Testimonial/>
-    </>
+    </div>
   );
 }
