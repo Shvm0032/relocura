@@ -64,7 +64,7 @@ export default function WhyChooseUs() {
               className="border border-white/40 rounded-xl p-6 text-center backdrop-blur-sm bg-[#1C398E]  transition shadow-lg"
             >
               {/* Icon */}
-              <div className="w-20 h-20 mx-auto mb-4 rounded-full border-2 border-white flex items-center justify-center">
+              <div className="w-20 text-white h-20 mx-auto mb-4 rounded-full border-2 border-white flex items-center justify-center">
                 {item.icon}
               </div>
 
