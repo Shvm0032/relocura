@@ -23,7 +23,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Portugal Relocation Program",
+  title: "Atlas Entry Solution",
   description: "Legal relocation support to Portugal.",
    icons: {
     icon: "/favicon.ico",       
