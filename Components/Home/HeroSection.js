@@ -5,9 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const images = [
-  "/home/home-slider1.jpg",
-  "/home/home-slider2.jpg",
-  "/home/home-slider3.jpg",
+  "/home/slider-1.jpg",
+  "/home/slider-2.jpg",
+  "/home/slider-3.jpg",
+  "/home/slider-4.jpg",
 ];
 
 export default function ImageSlider() {
@@ -48,7 +49,7 @@ export default function ImageSlider() {
               className="object-cover"
             />
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black/50"></div>
+            <div className="absolute inset-0 bg-black/40"></div>
           </div>
         ))}
       </Slider>

@@ -29,9 +29,9 @@ export default function AboutSection() {
           {/* Right Image */}
           <div className="flex-1 rounded-xl overflow-hidden">
             <img
-              src="/home/home-slider3.jpg"
+              src="/about/about-section.png"
               alt="About Image"
-              className="w-full h-full object-cover"
+              className="w-[500px] h-[500px] object-cover object-bottom"
             />
           </div>
 

@@ -9,7 +9,7 @@ import Opportunity from "@/Components/Home/Opportunity";
 
 export default function Home() {
   return (
-    <main className="bg-white text-gray-800 md:pt-16 ">
+    <main className="bg-white text-gray-800 md:pt-14 ">
       <HeroSection />
       <Opportunity/>
       <WhoWeAre />

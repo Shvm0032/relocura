@@ -44,12 +44,16 @@ export default function Header() {
       >
         {/* LEFT */}
         <div className="flex items-center gap-6 text-sm">
-          <span className="flex items-center gap-1">
-            <Phone size={16} /> +91 9876543210
-          </span>
-          <span className="flex items-center gap-1">
-            <Mail size={16} /> info@example.com
-          </span>
+          <a className="flex items-center gap-1">
+            <Phone size={16} />
+            +61 563XXXXXX
+          </a>
+          <a
+            href="mailto:atlas.solutionslda@gmail.com"
+            className="flex items-center gap-1"
+          >
+            <Mail size={16} /> atlas.solutionslda@gmail.com
+          </a>
         </div>
 
         {/* RIGHT */}
@@ -62,36 +66,49 @@ export default function Header() {
 
       {/* ---------- MAIN HEADER (LOGO + MENU) ---------- */}
       <div
-        className={`w-full md:bg-white bg-[#1C398E] shadow-sm transition-all duration-300 ${
+        className={`w-full md:bg-white shadow-sm transition-all duration-300 ${
           hideTopBar ? "top-0" : "md:top-8"
         } fixed`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center py-4">
+        <div className="max-w-7xl bg-white mx-auto px-6 flex justify-between items-center py-1">
           {/* LOGO */}
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/logo.png" 
+              src="/atlas-header-logo.png"
               alt="Logo"
-              width={40} 
-              height={40} 
-              className="md:h-16 md:w-28 h-14 w-20"
+              width={100}
+              height={100}
+              className="md:h-20 md:w-36 h-14 w-20"
             />
-          
           </Link>
 
           {/* DESKTOP MENU */}
           <nav className="hidden md:flex items-center gap-8 text-gray-700">
-            <Link href="/">Home</Link>
-            <Link href="/about">About</Link>
-            <Link href="/services">Services</Link>
-            <Link href="/process">Process</Link>
-            <Link href="/testimonial">Testimonial</Link>
-            <Link href="/contact-us">Contact</Link>
+            {[
+              { name: "Home", href: "/" },
+              { name: "About", href: "/about" },
+              { name: "Services", href: "/services" },
+              { name: "Process", href: "/process" },
+              { name: "Testimonial", href: "/testimonial" },
+              { name: "Contact", href: "/contact-us" },
+            ].map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="relative font-medium text-gray-700 hover:text-[#1C398E]
+                 after:absolute after:left-0 after:-bottom-2
+                 after:h-[3px] after:w-0 after:bg-[#1C398E]
+                 after:transition-all after:duration-300
+                 hover:after:w-full"
+              >
+                {item.name}
+              </Link>
+            ))}
           </nav>
 
           {/* MOBILE MENU BUTTON */}
           <button
-            className="md:hidden text-gray-100"
+            className="md:hidden text-[#1C398E]"
             onClick={() => setOpen(!open)}
           >
             {open ? <X size={28} /> : <Menu size={28} />}
@@ -100,7 +117,7 @@ export default function Header() {
 
         {/* MOBILE MENU DROPDOWN */}
         {open && (
-          <div className="md:hidden bg-white text-gray-700 shadow-lg px-6 py-4 flex flex-col gap-4">
+          <div className="md:hidden bg-[#1C398E] text-gray-100 shadow-lg px-6 py-4 flex flex-col gap-4">
             <Link href="/" onClick={() => setOpen(false)}>
               Home
             </Link>

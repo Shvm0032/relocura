@@ -33,13 +33,13 @@ export default function OurValues() {
         {/* LEFT IMAGE */}
         <div className="relative w-full h-[400px] md:h-full rounded-xl overflow-hidden">
           <img
-            src="/about/ourvalues.jpg"
+            src="/home/slider-4.jpg"
             alt="Relocation"
             className="w-full h-full object-cover"
           />
 
           {/* CENTER HEADING */}
-          <h2 className="absolute inset-0 flex items-center justify-center text-white bg-black/50 rounded-xl text-2xl md:text-6xl font-bold">
+          <h2 className="absolute inset-0 flex items-center justify-center text-white bg-black/40 rounded-xl text-2xl md:text-6xl font-bold">
             Our Values
           </h2>
         </div>

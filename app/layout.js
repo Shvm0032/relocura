@@ -25,6 +25,11 @@ const poppins = Poppins({
 export const metadata = {
   title: "Portugal Relocation Program",
   description: "Legal relocation support to Portugal.",
+   icons: {
+    icon: "/favicon.ico",       
+    shortcut: "/favicon.ico",   
+    apple: "/favicon.ico", 
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -48,16 +48,20 @@ export default function Footer() {
       {/* MAIN FOOTER */}
       <footer
         id="main-footer"
-        className="bg-[#1C398E] text-white pt-14 pb-10 px-6 md:px-16"
+        className="bg-gray-100 text-[#1C398E] md:pt-14 pt-10 pb-10 px-6 md:px-10"
       >
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-x-12 gap-y-8">
           {/* About */}
           <div>
-            <Link href="/" className="inline-block mb-4">
-              <img src="/logo.png" alt="Company Logo" className="h-15 w-40" />
+            <Link href="/" className="inline-block ">
+              <img
+                src="/atlas-footer-logo.png"
+                alt="Company Logo"
+                className="h-20 w-36"
+              />
             </Link>
 
-            <p className="text-gray-200 text-sm leading-6 text-left">
+            <p className="text-gray-600  text-justify text-sm leading-6 ">
               We provide legal relocation support to Portugal including
               documents, training, travel, and integration assistance.
             </p>
@@ -65,33 +69,65 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-left">
+            <h3 className="text-lg font-bold mb-4 text-left">
               Quick Links
             </h3>
 
-            <ul className="space-y-2 text-gray-300 text-sm text-left">
+            <ul className="space-y-2 text-gray-600 text-sm text-left">
               <li>
-                <a href="#who" className="hover:underline">
+                <a href="#who" className="hover:text-[#1C398E] ">
                   Who We Are
                 </a>
               </li>
               <li>
-                <a href="#process" className="hover:underline">
+                <a href="#process" className="hover:text-[#1C398E]">
                   Our Process
                 </a>
               </li>
               <li>
-                <a href="#what" className="hover:underline">
+                <a href="#what" className="hover:text-[#1C398E]">
                   What You Get
                 </a>
               </li>
               <li>
-                <a href="#faq" className="hover:underline">
+                <a href="#faq" className="hover:text-[#1C398E]">
                   FAQ
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:underline">
+                <a href="#contact" className="hover:text-[#1C398E]">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg font-bold mb-4 text-left">Services</h3>
+
+            <ul className="space-y-2 text-gray-600 text-sm text-left">
+              <li>
+                <a href="#who" className="hover:text-[#1C398E]">
+                  Who We Are
+                </a>
+              </li>
+              <li>
+                <a href="#process" className="hover:text-[#1C398E]">
+                  Our Process
+                </a>
+              </li>
+              <li>
+                <a href="#what" className="hover:text-[#1C398E]">
+                  What You Get
+                </a>
+              </li>
+              <li>
+                <a href="#faq" className="hover:text-[#1C398E]">
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-[#1C398E]">
                   Contact
                 </a>
               </li>
@@ -100,28 +136,37 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-left">Contact Us</h3>
+            <h3 className="text-lg font-bold mb-4 text-left">Contact Us</h3>
 
-            <p className="flex items-center gap-3 text-gray-200 text-sm mb-2 text-left">
-              <Phone size={18} /> +91 98765 43210
-            </p>
+            <a
+              href="tel:"
+              className="flex items-center gap-3 text-gray-600 hover:text-[#1C398E] text-sm mb-2 text-left"
+            >
+              <Phone size={18} /> +61 563XXXXXX
+            </a>
 
-            <p className="flex items-center gap-3 text-gray-200 text-sm mb-2 text-left">
-              <Mail size={18} /> info@company.com
-            </p>
+            <a
+              href="mailto:atlas.solutionslda@gmail.com"
+              className="flex items-center gap-3 hover:text-[#1C398E] text-gray-600 text-sm mb-2 text-left"
+            >
+              <Mail size={18} /> atlas.solutionslda@gmail.com
+            </a>
 
-            <p className="flex items-center gap-3 text-gray-200 text-sm mb-5 text-left">
+            <a
+              href=""
+              className="flex items-center gap-3 hover:text-[#1C398E] text-gray-600 text-sm mb-5 text-left"
+            >
               <MapPin size={18} /> Lisbon, Portugal
-            </p>
+            </a>
 
             <div className="flex gap-4 mt-4">
-              <Link href="#" className="hover:text-blue-300">
+              <Link href="#" className="text-[#1C398E] ">
                 <Facebook size={20} />
               </Link>
-              <Link href="#" className="hover:text-blue-300">
+              <Link href="#" className="text-[#1C398E] ">
                 <Instagram size={20} />
               </Link>
-              <Link href="#" className="hover:text-blue-300">
+              <Link href="#" className="text-[#1C398E] ">
                 <Linkedin size={20} />
               </Link>
             </div>
@@ -131,7 +176,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="bg-[#1C398E] border-t border-gray-50 text-center py-4 text-gray-300 text-sm">
-        © {new Date().getFullYear()} CompanyName. All rights reserved.
+        © {new Date().getFullYear()} Atlas Expert Solution. All rights reserved.
       </div>
 
       {/* Scroll To Top Button */}
