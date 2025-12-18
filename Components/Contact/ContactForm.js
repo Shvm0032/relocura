@@ -6,7 +6,7 @@ export default function ContactForm() {
       {/* Background */}
       <div
         className="absolute inset-0 bg-contain bg-center bg-repeat opacity-20"
-        style={{ backgroundImage: "url('/contact/contact-bg1.png')" }}
+        style={{ backgroundImage: "url('/contact/contact-bg-101.png')" }}
       ></div>
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6">

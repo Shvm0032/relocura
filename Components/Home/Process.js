@@ -34,7 +34,7 @@ export default function Process() {
   ];
 
   return (
-    <section className="relative w-full mx-auto px-6 py-16">
+    <section id="process" className="relative w-full mx-auto px-2 md:px-6 py-16">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"

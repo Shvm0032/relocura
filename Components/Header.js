@@ -44,9 +44,9 @@ export default function Header() {
       >
         {/* LEFT */}
         <div className="flex items-center gap-6 text-sm">
-          <a className="flex items-center gap-1">
+          <a href="tel:+35679605019" className="flex items-center gap-1">
             <Phone size={16} />
-            +61 563XXXXXX
+           +35679605019
           </a>
           <a
             href="mailto:atlas.solutionslda@gmail.com"

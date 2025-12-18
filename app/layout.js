@@ -8,6 +8,7 @@ import "./globals.css";
 
 
 
+
 // Heading Font
 const playfair = Playfair_Display({
   subsets: ["latin"],

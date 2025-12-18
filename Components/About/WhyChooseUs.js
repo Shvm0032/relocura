@@ -1,37 +1,38 @@
 "use client";
 
-import {Scale, FileCheck , Home , Plane , MapPin , GraduationCap } from "lucide-react";
+import {Scale, FileCheck , Home , Plane , HeartHandshake , GraduationCap } from "lucide-react";
+
 
 const data = [
   {
     icon: <Scale size={40} />,
-    title: "100% legal process",
-    desc: "This slide is 100% editable. Adapt it to your needs and capture your audience's attention."
+    title: "100% Legal & Transparent Process",
+    desc: "We guide you through fully legal and government-approved pathways for relocation to Portugal.No false promises, no hidden costs — complete transparency at every step."
   },
   {
     icon: <FileCheck size={40} />,
-    title: "Fast and error-free documentation",
-    desc: "This slide is 100% editable. Adapt it to your needs and capture your audience's attention."
+    title: "Complete Documentation Support",
+    desc: "From visa applications to residence permits, we handle the entire documentation process for you.Our experts ensure everything is accurate, timely, and stress-free."
   },
   {
     icon: <Plane  size={40} />,
-    title: "Airport support & organized travel",
-    desc: "This slide is 100% editable. Adapt it to your needs and capture your audience's attention."
+    title: "Smooth & Organized Relocation",
+    desc: "We manage travel planning, arrival coordination, and local assistance to ensure a seamless relocation experience.You move to Portugal with confidence and peace of mind."
   },
   {
     icon: <Home  size={40} />,
-    title: "Safe accommodation arrangement",
-    desc: "This slide is 100% editable. Adapt it to your needs and capture your audience's attention."
-  },
-  {
-    icon: <MapPin  size={40} />,
-    title: "On-ground Portugal assistance",
-    desc: "This slide is 100% editable. Adapt it to your needs and capture your audience's attention."
+    title: "Welcome Stay with Accommodation & Meals",
+    desc: "Upon arrival, we provide comfortable accommodation along with meals, helping you settle in easily during your initial days."
   },
   {
     icon: <GraduationCap  size={40} />,
-    title: "Professional training after arrival",
-    desc: "This slide is 100% editable. Adapt it to your needs and capture your audience's attention."
+    title: "Professional Training & Career Preparation",
+    desc: "We offer job-oriented training aligned with European market standards, increasing your employability and long-term success."
+  },
+  {
+    icon: <HeartHandshake  size={40} />,
+    title: "Ongoing Support & Local Integration",
+    desc: "Our support doesn’t stop after arrival. We assist with local registration, guidance, and smooth integration into Portuguese life."
   }
 ];
 

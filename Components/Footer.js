@@ -48,7 +48,7 @@ export default function Footer() {
       {/* MAIN FOOTER */}
       <footer
         id="main-footer"
-        className="bg-gray-50 text-[#1C398E] md:pt-14 pt-10 pb-10 px-6 md:px-10"
+        className="bg-gray-50 text-[#1C398E] border-t border-[#4e6dca] md:pt-14 pt-10 pb-10 px-6 md:px-10"
       >
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-x-12 gap-y-8">
           {/* About */}
@@ -75,27 +75,23 @@ export default function Footer() {
 
             <ul className="space-y-2 text-gray-600 text-sm text-left">
               <li>
-                <a href="#who" className="hover:text-[#1C398E] ">
+                <a href="/#who" className="hover:text-[#1C398E] ">
                   Who We Are
                 </a>
               </li>
               <li>
-                <a href="#process" className="hover:text-[#1C398E]">
+                <a href="/#process" className="hover:text-[#1C398E]">
                   Our Process
                 </a>
               </li>
               <li>
-                <a href="#what" className="hover:text-[#1C398E]">
+                <a href="/#what" className="hover:text-[#1C398E]">
                   What You Get
                 </a>
               </li>
+              
               <li>
-                <a href="#faq" className="hover:text-[#1C398E]">
-                  FAQ
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="hover:text-[#1C398E]">
+                <a href="/contact-us" className="hover:text-[#1C398E]">
                   Contact
                 </a>
               </li>
@@ -103,22 +99,22 @@ export default function Footer() {
           </div>
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-left">Services</h3>
+            <h3 className="text-lg font-bold mb-4 text-left">Useful Links</h3>
 
             <ul className="space-y-2 text-gray-600 text-sm text-left">
               <li>
-                <a href="#who" className="hover:text-[#1C398E]">
-                  Who We Are
+                <a href="/about" className="hover:text-[#1C398E]">
+                  About Us
                 </a>
               </li>
               <li>
-                <a href="#process" className="hover:text-[#1C398E]">
-                  Our Process
+                <a href="/services" className="hover:text-[#1C398E]">
+                  Services
                 </a>
               </li>
               <li>
-                <a href="#what" className="hover:text-[#1C398E]">
-                  What You Get
+                <a href="/testimonial" className="hover:text-[#1C398E]">
+                  Testimonial
                 </a>
               </li>
               <li>
@@ -126,11 +122,7 @@ export default function Footer() {
                   FAQ
                 </a>
               </li>
-              <li>
-                <a href="#contact" className="hover:text-[#1C398E]">
-                  Contact
-                </a>
-              </li>
+              
             </ul>
           </div>
 
@@ -139,10 +131,10 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4 text-left">Contact Us</h3>
 
             <a
-              href="tel:"
+              href="tel:+35679605019"
               className="flex items-center gap-3 text-gray-600 hover:text-[#1C398E] text-sm mb-2 text-left"
             >
-              <Phone size={18} /> +61 563XXXXXX
+              <Phone size={18} /> +35679605019
             </a>
 
             <a

@@ -11,7 +11,7 @@ export default function WhatYouGet() {
   ];
 
   return (
-    <section className="bg-linear-to-r from-blue-900 to-gray-400 py-20 relative overflow-hidden">
+    <section id="what" className="bg-linear-to-r from-blue-900 to-gray-400 py-20 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
           What You Get

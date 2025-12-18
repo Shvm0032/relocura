@@ -14,7 +14,7 @@ export default function WhoWeAre() {
   ];
 
   return (
-    <section className="relative w-full pb-20 bg-white">
+    <section id="who" className="relative w-full pb-20 bg-white">
       {/* ===== MOBILE HEADING ===== */}
       <h2 className="block md:hidden text-4xl text-center text-gray-700 font-bold pt-10 pb-4">
         Who We Are
