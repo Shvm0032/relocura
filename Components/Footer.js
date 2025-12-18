@@ -48,7 +48,7 @@ export default function Footer() {
       {/* MAIN FOOTER */}
       <footer
         id="main-footer"
-        className="bg-gray-100 text-[#1C398E] md:pt-14 pt-10 pb-10 px-6 md:px-10"
+        className="bg-gray-50 text-[#1C398E] md:pt-14 pt-10 pb-10 px-6 md:px-10"
       >
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-x-12 gap-y-8">
           {/* About */}
