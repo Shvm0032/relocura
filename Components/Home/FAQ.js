@@ -10,7 +10,7 @@ export default function FAQ() {
       answer: "No. We are not a temporary employment agency and do not provide employment. We offer training, support, and orientation.",
     },
     {
-      question: "Can I participate if I am illegally resident in Malta?",
+      question: "Can I participate if I am illegally resident in Europe?",
       answer: "Yes, if you meet the requirements.",
     },
     {

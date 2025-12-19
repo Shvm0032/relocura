@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { FaWhatsapp } from "react-icons/fa";
 import {
   Phone,
   Mail,
@@ -10,6 +11,7 @@ import {
   Instagram,
   Linkedin,
   ArrowUp,
+  MessageCircle,
 } from "lucide-react";
 
 export default function Footer() {
@@ -69,9 +71,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-left">
-              Quick Links
-            </h3>
+            <h3 className="text-lg font-bold mb-4 text-left">Quick Links</h3>
 
             <ul className="space-y-2 text-gray-600 text-sm text-left">
               <li>
@@ -89,7 +89,7 @@ export default function Footer() {
                   What You Get
                 </a>
               </li>
-              
+
               <li>
                 <a href="/contact-us" className="hover:text-[#1C398E]">
                   Contact
@@ -122,7 +122,6 @@ export default function Footer() {
                   FAQ
                 </a>
               </li>
-              
             </ul>
           </div>
 
@@ -170,6 +169,22 @@ export default function Footer() {
       <div className="bg-[#1C398E] border-t border-gray-50 text-center py-4 text-gray-300 text-sm">
         © {new Date().getFullYear()} Atlas Expert Solution. All rights reserved.
       </div>
+      {/* WhatsApp Chat Button - Icon first, text on hover */}
+      {/* WhatsApp Chat Button - Compact */}
+      <a
+        href="https://wa.me/35679605019"
+        target="_blank"
+        rel="noopener noreferrer"
+        className=" fixed bottom-20 right-6 z-50 flex items-center gap-2 bg-green-500 text-white w-12 h-12 px-3 rounded-full shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:w-36 hover:bg-green-600 "
+      >
+        <FaWhatsapp size={20} className="shrink-0" />
+
+        <span
+          className=" whitespace-nowrap text-xs font-medium opacity-100 translate-x-3 transition-all duration-300 hover:opacity-100 hover:translate-x-0  "
+        >
+          Chat with us
+        </span>
+      </a>
 
       {/* Scroll To Top Button */}
       {showButton && (

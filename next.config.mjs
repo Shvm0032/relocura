@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  output: "export",        // static build
+  images: {
+    unoptimized: true,     // next/image cPanel compatible
+  },
 };
 
 export default nextConfig;

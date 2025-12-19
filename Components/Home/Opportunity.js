@@ -42,13 +42,13 @@ export default function Opportunity() {
 
         {/* CTA Button */}
         <div className="mt-10">
-          <Link
-            href="#contact"
+          <a
+            href="mailto:atlas.solutionslda@gmail.com"
             className="inline-block bg-[#1C398E] text-white px-8 py-3 rounded-lg font-medium 
             transition-transform duration-300 hover:scale-95 hover:bg-[#1C398E]"
           >
             Request Information
-          </Link>
+          </a>
         </div>
       </div>
     </section>
