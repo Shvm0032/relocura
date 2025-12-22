@@ -150,7 +150,7 @@ export default function Footer() {
               href=""
               className="flex items-center gap-3 hover:text-[#1C398E] text-gray-600 text-sm mb-5 text-left"
             >
-              <MapPin size={18} /> Lisbon, Portugal
+              <MapPin size={18} /> Oporto, Portugal
             </a>
 
             <div className="flex gap-4 mt-4">
