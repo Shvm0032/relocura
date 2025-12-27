@@ -56,12 +56,39 @@ export default function Header() {
           </a>
         </div>
 
-        {/* RIGHT */}
-        <div className="flex items-center gap-4">
-          <Facebook className="cursor-pointer" size={18} />
-          <Instagram className="cursor-pointer" size={18} />
-          <Linkedin className="cursor-pointer" size={18} />
-        </div>
+     {/* RIGHT — SOCIAL ICONS (DESKTOP) */}
+<div className="flex items-center gap-4">
+  <a
+    href="https://www.facebook.com/profile.php?id=61585349291551"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+    className="hover:text-gray-300 transition-colors"
+  >
+    <Facebook size={18} />
+  </a>
+
+  <a
+    href="https://instagram.com/YOURPAGE"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+    className="hover:text-gray-300 transition-colors"
+  >
+    <Instagram size={18} />
+  </a>
+
+  <a
+    href="https://linkedin.com/company/YOURPAGE"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+    className="hover:text-gray-300 transition-colors"
+  >
+    <Linkedin size={18} />
+  </a>
+</div>
+
       </div>
 
       {/* ---------- MAIN HEADER (LOGO + MENU) ---------- */}
@@ -137,11 +164,18 @@ export default function Header() {
             <Link href="/contact-us" onClick={() => setOpen(false)}>
               Contact
             </Link>
-            <div className="flex items-center gap-4">
-              <Facebook className="cursor-pointer" size={18} />
-              <Instagram className="cursor-pointer" size={18} />
-              <Linkedin className="cursor-pointer" size={18} />
-            </div>
+       <div className="flex items-center gap-4 mt-2">
+  <a href="https://www.facebook.com/profile.php?id=61585349291551" target="_blank" rel="noopener noreferrer">
+    <Facebook size={18} />
+  </a>
+  <a href="https://instagram.com/YOURPAGE" target="_blank" rel="noopener noreferrer">
+    <Instagram size={18} />
+  </a>
+  <a href="https://linkedin.com/company/YOURPAGE" target="_blank" rel="noopener noreferrer">
+    <Linkedin size={18} />
+  </a>
+</div>
+
           </div>
         )}
       </div>

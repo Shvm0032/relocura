@@ -154,7 +154,7 @@ export default function Footer() {
             </a>
 
             <div className="flex gap-4 mt-4">
-              <Link href="#" className="text-[#1C398E] ">
+              <Link target="_blank" href="https://www.facebook.com/profile.php?id=61585349291551" className="text-[#1C398E] ">
                 <Facebook size={20} />
               </Link>
               <Link href="#" className="text-[#1C398E] ">
